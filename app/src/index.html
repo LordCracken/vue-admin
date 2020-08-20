@@ -6,13 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <script src="bundle.js" defer></script>
 </head>
 
 <body>
-  <input type="text">
-  <button id="create-button">Создать страницу</button>
-  <button id="delete-button">Удалить страницу</button>
-  <script src="bundle.js"></script>
+  <div id="app">
+    <input type="text" v-model="newPageName">
+    <button v-on:click="createPage">Создать страницу</button>
+    <ol>
+      <li v-for="page in pageList">{{ page }} <a href="#" v-on:click="deletePage(page)">(X)</a></li>
+    </ol>
+  </div>
+
 </body>
 
 </html>
