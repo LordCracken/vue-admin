@@ -5,7 +5,7 @@ const sass = require('gulp-sass');
 
 const dist = 'I:/openserver/domains/call-center/admin';
 
-gulp.task('copy-html', () => gulp.src('./app/src/index.html').pipe(gulp.dest(dist)));
+gulp.task('copy-html', () => gulp.src('./app/index.html').pipe(gulp.dest(dist)));
 gulp.task('copy-api', () => gulp.src('./app/api/**/*.*').pipe(gulp.dest(`${dist}/api`)));
 gulp.task('copy-assets', () => gulp.src('./app/assets/**/*.*').pipe(gulp.dest(`${dist}/assets`)));
 gulp.task('build-js', () => browserify('./app/src/main.js', {debug: true})
